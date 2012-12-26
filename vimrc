@@ -56,8 +56,11 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+nnoremap vv <C-w>v
+nnoremap ss <C-w>s
 
 nnoremap <leader>d :NERDTreeToggle<cr>
+
 
 " Ui stuff
 if has('gui_running')

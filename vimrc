@@ -46,7 +46,7 @@ filetype plugin indent on
 let mapleader=','
 
 inoremap jk <esc>
-vnoremap jk <esc>
+"vnoremap jk <esc>
 
 nnoremap ; :
 nnoremap // :nohlsearch<cr>
@@ -58,6 +58,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap vv <C-w>v
 nnoremap ss <C-w>s
+nnoremap cpcc :CtrlPClearCache<cr>
 
 nnoremap <leader>d :NERDTreeToggle<cr>
 

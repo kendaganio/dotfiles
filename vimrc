@@ -11,9 +11,13 @@ set clipboard+=unnamed  " Yanks go on clipboard instead.
 set pastetoggle=<F2> "  toggle between paste and normal: for 'safer' pasting from keyboard
 
 " Backup
-set nowritebackup
 set nobackup
+set noswapfile
+set nowb
 set directory=/tmp// " prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename(//)
+
+" Display tabs and trailing spaces visually
+set list listchars=tab:\ \ ,trail:·
 
 " Buffers
 set hidden " The current buffer can be put to the background without writing to disk
@@ -52,14 +56,17 @@ nnoremap ; :
 nnoremap // :nohlsearch<cr>
 nnoremap <leader>rs :source $MYVIMRC<cr>
 
+" Buffer moving
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
+
+" Buffer splitting
 nnoremap vv <C-w>v
 nnoremap ss <C-w>s
-nnoremap cpcc :CtrlPClearCache<cr>
 
+nnoremap cpcc :CtrlPClearCache<cr>
 nnoremap <leader>d :NERDTreeToggle<cr>
 
 

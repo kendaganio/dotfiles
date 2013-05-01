@@ -75,7 +75,7 @@ if has('gui_running')
   set background=dark
   set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
   set guioptions=aem
-  colorscheme base16-monokai
+  colorscheme base16-solarized
 endif
 
 let g:Powerline_symbols = 'fancy'

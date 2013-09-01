@@ -27,7 +27,6 @@ set hlsearch    " highlight search
 set ignorecase  " Do case in sensitive matching with
 set smartcase		" be sensitive when there's a capital letter
 set incsearch   "
-" "}}}
 
 set nowrap
 set textwidth=0		" Don't wrap lines by default
@@ -46,7 +45,6 @@ syntax on
 filetype plugin indent on
 
 " Key bindings
-
 let mapleader=','
 
 inoremap jk <esc>

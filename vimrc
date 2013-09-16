@@ -72,6 +72,7 @@ nnoremap <leader>d :NERDTreeToggle<cr>
 if has('gui_running')
   set background=dark
   set guioptions=aem
+  set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
   colorscheme base16-solarized
 endif
 

@@ -10,9 +10,6 @@ set history=256
 " Automatically track changes to buffers
 set autoread  
 
-" Tag file specific
-set tags += ./tags,tags
-
 set clipboard+=unnamed  " Yanks go on clipboard instead.
 set pastetoggle=<F2> "  toggle between paste and normal: for 'safer' pasting from keyboard
 

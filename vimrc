@@ -1,11 +1,15 @@
 " Disable vi compatibility
 set nocompatible 
 
+" Set 256 Colors
+let &t_Co = 256
+
 " Large history buffer 
 set history=256  
 
 " Automatically track changes to buffers
 set autoread  
+set autochdir
 
 set clipboard+=unnamed  " Yanks go on clipboard instead.
 set pastetoggle=<F2> "  toggle between paste and normal: for 'safer' pasting from keyboard
@@ -17,7 +21,6 @@ set nowb
 set directory=/tmp// " prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename(//)
 
 " Display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
 
 " Buffers
 set hidden " The current buffer can be put to the background without writing to disk
@@ -66,14 +69,5 @@ nnoremap ss <C-w>s
 
 nnoremap cpcc :CtrlPClearCache<cr>
 nnoremap <leader>d :NERDTreeToggle<cr>
-
-
-" Ui stuff
-if has('gui_running')
-  set background=dark
-  set guioptions=aem
-  set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
-  colorscheme base16-solarized
-endif
 
 let g:Powerline_symbols = 'fancy'

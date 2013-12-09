@@ -66,6 +66,9 @@ nnoremap <C-l> <C-w>l
 nnoremap vv <C-w>v
 nnoremap ss <C-w>s
 
+" Scratch buffer
+nnoremap <leader>s :Scratch<cr>
+
 nnoremap cpcc :CtrlPClearCache<cr>
 nnoremap <leader>d :NERDTreeToggle<cr>
 

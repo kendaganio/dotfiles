@@ -70,3 +70,4 @@ nnoremap cpcc :CtrlPClearCache<cr>
 nnoremap <leader>d :NERDTreeToggle<cr>
 
 let g:Powerline_symbols = 'fancy'
+colorscheme base16-solarized

@@ -6,6 +6,7 @@ let &t_Co = 256
 
 " Large history buffer 
 set history=256  
+set cc=80
 
 " Automatically track changes to buffers
 set autoread  

@@ -1,6 +1,9 @@
 " Disable vi compatibility
 set nocompatible 
 
+" Set encoding
+set encoding=utf8
+
 " Set 256 Colors
 let &t_Co = 256
 
@@ -21,6 +24,7 @@ set nowb
 set directory=/tmp// " prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename(//)
 
 " Display tabs and trailing spaces visually
+set list listchars=tab:→\ ,trail:·
 
 " Buffers
 set hidden " The current buffer can be put to the background without writing to disk
@@ -74,4 +78,4 @@ nnoremap cpcc :CtrlPClearCache<cr>
 nnoremap <leader>d :NERDTreeToggle<cr>
 
 let g:Powerline_symbols = 'fancy'
-colorscheme solarized
+colorscheme base16-tomorrow

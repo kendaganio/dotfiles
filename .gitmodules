@@ -31,3 +31,6 @@
 [submodule "vim/bundle/vim-slim"]
 	path = vim/bundle/vim-slim
 	url = git@github.com:slim-template/vim-slim
+[submodule "vim/bundle/vim-jade"]
+	path = vim/bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade.git

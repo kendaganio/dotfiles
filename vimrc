@@ -79,3 +79,5 @@ nnoremap <leader>d :NERDTreeToggle<cr>
 
 let g:Powerline_symbols = 'fancy'
 colorscheme base16-tomorrow
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist'

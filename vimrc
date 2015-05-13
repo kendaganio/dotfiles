@@ -1,18 +1,31 @@
-" Disable vi compatibility
-set nocompatible 
+call plug#begin('~/.vim/plugged')
 
-" Set encoding
-set encoding=utf8
+" Basics
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-vinegar'
+Plug 'ddollar/nerdcommenter'
+Plug 'mileszs/ack.vim'
+Plug 'Lokaltog/vim-easymotion'
 
-" Set 256 Colors
-let &t_Co = 256
+" Colors
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 
-" Large history buffer 
-set history=256  
+" Syntax
+Plug 'slim-template/vim-slim'
+Plug 'digitaltoad/vim-jade'
+call plug#end()
+
+set nocompatible " Disable vi compatibility
+set encoding=utf8 " Set encoding
+let &t_Co = 256 " Set 256 Colors
+
+set history=256  " Large history buffer 
 set cc=80
 
-" Automatically track changes to buffers
-set autoread  
+set autoread " Automatically track changes to buffers
 
 set clipboard+=unnamed  " Yanks go on clipboard instead.
 set pastetoggle=<F2> "  toggle between paste and normal: for 'safer' pasting from keyboard
@@ -33,7 +46,7 @@ set hidden " The current buffer can be put to the background without writing to 
 set hlsearch    " highlight search
 set ignorecase  " Do case in sensitive matching with
 set smartcase		" be sensitive when there's a capital letter
-set incsearch   "
+set incsearch   " searches before pressing enter
 
 set nowrap
 set textwidth=0		" Don't wrap lines by default
@@ -47,9 +60,10 @@ set shiftwidth=2 " Set the default shift width for indents
 set expandtab   " Make tabs into spaces (set by tabstop)
 set smarttab " Smarter tab levels
 
-call pathogen#infect() 
+" Syntax highlighting
 syntax on
 filetype plugin indent on
+au BufRead,BufNewFile *.cjsx set filetype=coffee
 
 " Key bindings
 let mapleader=','
@@ -71,16 +85,12 @@ nnoremap <C-l> <C-w>l
 nnoremap vv <C-w>v
 nnoremap ss <C-w>s
 
-" Scratch buffer
-nnoremap <leader>s :Scratch<cr>
-
 nnoremap cpcc :CtrlPClearCache<cr>
 nnoremap <leader>d :NERDTreeToggle<cr>
 
+" Custom config stuff
 let g:Powerline_symbols = 'fancy'
-colorscheme base16-tomorrow
-
+let g:airline_powerline_fonts = 1
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|build'
 
-au BufRead,BufNewFile *.cjsx set filetype=coffee
-
+colorscheme base16-tomorrow

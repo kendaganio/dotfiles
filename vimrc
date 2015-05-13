@@ -16,6 +16,7 @@ Plug 'chriskempson/base16-vim'
 " Syntax
 Plug 'slim-template/vim-slim'
 Plug 'digitaltoad/vim-jade'
+Plug 'kchmck/vim-coffee-script'
 call plug#end()
 
 set nocompatible " Disable vi compatibility

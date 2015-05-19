@@ -23,7 +23,7 @@ set nocompatible " Disable vi compatibility
 set encoding=utf8 " Set encoding
 let &t_Co = 256 " Set 256 Colors
 
-set history=256  " Large history buffer 
+set history=256  " Large history buffer
 set cc=80
 
 set autoread " Automatically track changes to buffers
@@ -42,6 +42,7 @@ set list listchars=tab:→\ ,trail:·
 
 " Buffers
 set hidden " The current buffer can be put to the background without writing to disk
+set laststatus=2
 
 " Match and search
 set hlsearch    " highlight search
@@ -90,8 +91,11 @@ nnoremap cpcc :CtrlPClearCache<cr>
 nnoremap <leader>d :NERDTreeToggle<cr>
 
 " Custom config stuff
-let g:Powerline_symbols = 'fancy'
+let g:airline_theme = 'luna'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 let g:airline_powerline_fonts = 1
+
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|build'
 
 colorscheme base16-tomorrow

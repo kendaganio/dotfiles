@@ -6,7 +6,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'ddollar/nerdcommenter'
-Plug 'mileszs/ack.vim'
+Plug 'rking/ag.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -90,6 +90,7 @@ nnoremap ss <C-w>s
 
 nnoremap cpcc :CtrlPClearCache<cr>
 nnoremap <leader>d :NERDTreeToggle<cr>
+nnoremap <leader>a :Ag 
 
 " Custom config stuff
 let g:airline_theme = 'luna'
@@ -98,5 +99,8 @@ let g:airline_right_sep=''
 let g:airline_powerline_fonts = 1
 
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|build'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+let g:ctrlp_use_caching = 0
+
 
 colorscheme base16-tomorrow

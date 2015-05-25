@@ -8,6 +8,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'ddollar/nerdcommenter'
 Plug 'mileszs/ack.vim'
 Plug 'Lokaltog/vim-easymotion'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Colors
 Plug 'altercation/vim-colors-solarized'

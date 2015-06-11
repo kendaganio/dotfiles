@@ -18,6 +18,11 @@ Plug 'chriskempson/base16-vim'
 Plug 'slim-template/vim-slim'
 Plug 'digitaltoad/vim-jade'
 Plug 'kchmck/vim-coffee-script'
+Plug 'elixir-lang/vim-elixir'
+
+" Other stuff
+Plug 'shime/vim-livedown'
+
 call plug#end()
 
 set nocompatible " Disable vi compatibility
@@ -70,10 +75,8 @@ au BufRead,BufNewFile *.cjsx set filetype=coffee
 
 " Key bindings
 let mapleader=','
-
 inoremap jk <esc>
 "vnoremap jk <esc>
-
 nnoremap ; :
 nnoremap // :nohlsearch<cr>
 nnoremap <leader>rs :source $MYVIMRC<cr>
@@ -102,5 +105,8 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|build'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
-
 colorscheme base16-tomorrow
+nnoremap j gj
+nnoremap k gk
+nnoremap gj j
+nnoremap gk k

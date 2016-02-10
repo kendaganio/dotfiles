@@ -1,7 +1,9 @@
 call plug#begin('~/.vim/plugged')
 
 " Basics
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'bling/vim-airline/'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-vinegar'
@@ -30,7 +32,6 @@ set encoding=utf8 " Set encoding
 let &t_Co = 256 " Set 256 Colors
 
 set history=256  " Large history buffer
-set cc=80
 
 set autoread " Automatically track changes to buffers
 
@@ -73,6 +74,13 @@ syntax on
 filetype plugin indent on
 au BufRead,BufNewFile *.cjsx set filetype=coffee
 
+set fillchars+=vert:\ 
+
+let g:base16_shell_path = '/Users/kd/.config/base16-shell'
+colorscheme base16-ocean
+set background=dark
+
+
 " Key bindings
 let mapleader=','
 inoremap jk <esc>
@@ -105,7 +113,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|build'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0
 
-colorscheme base16-tomorrow
 nnoremap j gj
 nnoremap k gk
 nnoremap gj j

@@ -29,7 +29,6 @@ call plug#end()
 
 set nocompatible " Disable vi compatibility
 set encoding=utf8 " Set encoding
-let &t_Co = 256 " Set 256 Colors
 
 set history=256  " Large history buffer
 
@@ -76,10 +75,10 @@ au BufRead,BufNewFile *.cjsx set filetype=coffee
 
 set fillchars+=vert:\ 
 
-let g:base16_shell_path = '/Users/kd/.config/base16-shell'
-colorscheme base16-ocean
+" UI colors
+let &t_Co = 256 " Set 256 Colors
 set background=dark
-
+colorscheme base16-ocean
 
 " Key bindings
 let mapleader=','

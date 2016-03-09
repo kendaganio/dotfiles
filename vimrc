@@ -11,6 +11,7 @@ Plug 'ddollar/nerdcommenter'
 Plug 'rking/ag.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-surround'
 
 " Colors
 Plug 'altercation/vim-colors-solarized'
@@ -87,6 +88,7 @@ inoremap jk <esc>
 nnoremap ; :
 nnoremap // :nohlsearch<cr>
 nnoremap <leader>rs :source $MYVIMRC<cr>
+nnoremap <leader>w :w<enter>
 
 " Buffer moving
 nnoremap <C-j> <C-w>j

@@ -3,15 +3,14 @@ call plug#begin('~/.vim/plugged')
 " Basics
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'bling/vim-airline/'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'ddollar/nerdcommenter'
 Plug 'rking/ag.vim'
-Plug 'Lokaltog/vim-easymotion'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 " Colors
 Plug 'altercation/vim-colors-solarized'
@@ -72,9 +71,10 @@ set smarttab " Smarter tab levels
 " Syntax highlighting
 syntax on
 filetype plugin indent on
-au BufRead,BufNewFile *.cjsx set filetype=coffee
 
 set fillchars+=vert:\ 
+
+autocmd BufWritePre *.rb,*.js,*.jsx,*.slim,*.css,*.scss :%s/\s\+$//e " Remove trailing whitespaces
 
 " UI colors
 let &t_Co = 256 " Set 256 Colors
@@ -84,11 +84,14 @@ colorscheme base16-ocean
 " Key bindings
 let mapleader=','
 inoremap jk <esc>
-"vnoremap jk <esc>
 nnoremap ; :
 nnoremap // :nohlsearch<cr>
 nnoremap <leader>rs :source $MYVIMRC<cr>
 nnoremap <leader>w :w<enter>
+
+nnoremap cpcc :CtrlPClearCache<cr>
+nnoremap <leader>d :NERDTreeToggle<cr>
+nnoremap <leader>a :Ag 
 
 " Buffer moving
 nnoremap <C-j> <C-w>j
@@ -100,16 +103,13 @@ nnoremap <C-l> <C-w>l
 nnoremap vv <C-w>v
 nnoremap ss <C-w>s
 
-nnoremap cpcc :CtrlPClearCache<cr>
-nnoremap <leader>d :NERDTreeToggle<cr>
-nnoremap <leader>a :Ag 
-
 " Custom config stuff
 let g:airline_theme = 'luna'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_powerline_fonts = 1
 
+" Change ctrlp to use ag
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|build'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let g:ctrlp_use_caching = 0

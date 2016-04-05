@@ -4,16 +4,16 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-vinegar'
 Plug 'ddollar/nerdcommenter'
 Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Colors
-Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/base16-vim'
 
 " Syntax
@@ -89,9 +89,10 @@ nnoremap // :nohlsearch<cr>
 nnoremap <leader>rs :source $MYVIMRC<cr>
 nnoremap <leader>w :w<enter>
 
-nnoremap cpcc :CtrlPClearCache<cr>
 nnoremap <leader>d :NERDTreeToggle<cr>
 nnoremap <leader>a :Ag 
+
+nnoremap <C-p> :FZF<cr>
 
 " Buffer moving
 nnoremap <C-j> <C-w>j
@@ -108,11 +109,6 @@ let g:airline_theme = 'luna'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_powerline_fonts = 1
-
-" Change ctrlp to use ag
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|dist\|build'
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-let g:ctrlp_use_caching = 0
 
 nnoremap j gj
 nnoremap k gk

@@ -18,9 +18,11 @@ Plug 'chriskempson/base16-vim'
 
 " Syntax
 Plug 'slim-template/vim-slim'
-Plug 'digitaltoad/vim-jade'
+Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 Plug 'kchmck/vim-coffee-script'
 Plug 'elixir-lang/vim-elixir'
+Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 " Other stuff
 Plug 'shime/vim-livedown'
@@ -108,7 +110,6 @@ nnoremap ss <C-w>s
 let g:airline_theme = 'luna'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
-let g:airline_powerline_fonts = 1
 
 nnoremap j gj
 nnoremap k gk

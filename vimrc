@@ -1,19 +1,22 @@
 call plug#begin('~/.vim/plugged')
 
 " Basics
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-vinegar'
 Plug 'ddollar/nerdcommenter'
 Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
+
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" Colors
+" Pretty Stuff
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
 
 " Syntax
@@ -96,6 +99,8 @@ nnoremap <leader>a :Ag
 
 nnoremap <C-p> :FZF<cr>
 
+nnoremap <leader>gb :Gblame<cr>
+
 " Buffer moving
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
@@ -110,6 +115,8 @@ nnoremap ss <C-w>s
 let g:airline_theme = 'luna'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+
+let g:javascript_plugin_jsdoc=1
 
 nnoremap j gj
 nnoremap k gk

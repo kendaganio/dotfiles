@@ -7,10 +7,12 @@ Plug 'ddollar/nerdcommenter'
 Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
+" tpope section
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 
+" fzf is <3 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -116,6 +118,8 @@ let g:airline_theme = 'luna'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
+" JS Config shit
+let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc=1
 
 nnoremap j gj

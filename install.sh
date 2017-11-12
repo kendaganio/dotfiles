@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Copying configurations.."
+echo "Let's start this mofo up!"
 
 ln -s `pwd`/vimrc ~/.vimrc
 ln -s `pwd`/gvimrc ~/.gvimrc

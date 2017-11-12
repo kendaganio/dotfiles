@@ -2,12 +2,12 @@ call plug#begin('~/.vim/plugged')
 
 " Basics
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-vinegar'
 Plug 'ddollar/nerdcommenter'
 Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
 
 " tpope section
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
@@ -22,9 +22,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
 
 " Syntax
-Plug 'slim-template/vim-slim'
+" Plug 'slim-template/vim-slim'
 Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
-Plug 'kchmck/vim-coffee-script'
 Plug 'elixir-lang/vim-elixir'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }

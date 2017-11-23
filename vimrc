@@ -5,6 +5,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'ddollar/nerdcommenter'
 Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'SirVer/ultisnips'
 
 " tpope section
 Plug 'tpope/vim-vinegar'
@@ -20,9 +21,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
+Plug 'Yggdroot/indentLine'
 
-" Syntax
-" Plug 'slim-template/vim-slim'
+" Syntax 
 Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 Plug 'elixir-lang/vim-elixir'
 Plug 'mxw/vim-jsx'
@@ -30,6 +31,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 " Other stuff
 Plug 'shime/vim-livedown'
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
@@ -102,13 +104,11 @@ nnoremap <C-p> :FZF<cr>
 
 nnoremap <leader>gb :Gblame<cr>
 
-" Buffer moving
+" Buffer Controls
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-
-" Buffer splitting
 nnoremap vv <C-w>v
 nnoremap ss <C-w>s
 
@@ -116,12 +116,12 @@ nnoremap ss <C-w>s
 let g:airline_theme = 'luna'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+let g:indentLine_char = '▏'
+let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
+let g:UltiSnipsSnippetsDirectorires = ["~/.vim/UltiSnips", "UltiSnips"]
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
 
 " JS Config shit
 let g:jsx_ext_required = 0
-let g:javascript_plugin_jsdoc=1
+let g:javascript_plugin_jsdoc= 1
 
-nnoremap j gj
-nnoremap k gk
-nnoremap gj j
-nnoremap gk k

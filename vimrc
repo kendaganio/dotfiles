@@ -24,9 +24,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'Yggdroot/indentLine'
 
 " Syntax 
-Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
-Plug 'elixir-lang/vim-elixir'
 Plug 'mxw/vim-jsx'
+Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 " Other stuff

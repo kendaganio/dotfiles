@@ -1,18 +1,26 @@
-snippet im "Import Statement"
+snippet im "import statement"
 import ${1:React} from '${2:react}'
 endsnippet
 
-snippet => "Create function" i
+snippet => "function declaration" i
 ($1) => {
 	$2
 }
 endsnippet
 
-snippet div "Creates a div lol"
+snippet div "creates a div lol"
 <div>$1</div>
 endsnippet
 
-snippet class "Creates a class"
+snippet tag "creates a tag"
+<${1:div}>$2</$1>
+endsnippet
+
+snippet tag/ "creates a self closing tag"
+<${1:div}/>
+endsnippet
+
+snippet class "class declaration"
 class ${1:ClassName} extends ${2:ParentClass} {
 	constructor(props) {
 	}
@@ -20,5 +28,17 @@ class ${1:ClassName} extends ${2:ParentClass} {
 	render() {
 		return <div></div>
 	}
+}
+endsnippet
+
+snippet ?: "ternary declaration"
+(${1:condition} ? ${2:true} : ${3:false})
+endsnippet
+
+snippet {? "ternary conditional render thing"
+{
+	${1:condidtion}
+		? ${2:truthy}
+		: ${3:falsy}
 }
 endsnippet

@@ -27,6 +27,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'mxw/vim-jsx'
 Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'editorconfig/editorconfig-vim'
 
 " Other stuff
 Plug 'shime/vim-livedown'
@@ -119,6 +120,7 @@ let g:indentLine_char = '▏'
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 let g:UltiSnipsSnippetsDirectorires = ["~/.vim/UltiSnips", "UltiSnips"]
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:indentLine_fileTypeExclude = ['json', 'markdown'] 
 
 " JS Config shit
 let g:jsx_ext_required = 0

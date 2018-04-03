@@ -76,6 +76,8 @@ set shiftwidth=2 " Set the default shift width for indents
 set expandtab   " Make tabs into spaces (set by tabstop)
 set smarttab " Smarter tab levels
 
+set shell=/bin/bash\ -i
+
 " Syntax highlighting
 syntax on
 filetype plugin indent on

@@ -11,3 +11,38 @@ class ${1:Classname}
 	end
 end
 endsnippet
+
+snippet desc "rspec describe block"
+describe "${1:wot}" do
+	$2
+end
+endsnippet
+
+snippet itd "rspec describe block"
+it "${1}" do
+	$2
+end
+endsnippet
+
+snippet it "rspec describe block"
+it "${1}"
+endsnippet
+
+snippet bef "rspec before block"
+before do
+	$1
+end
+endsnippet
+
+snippet ex "rspec expectation"
+expect($1).to
+endsnippet
+
+snippet exe "rspec expect(a).to eq(b)"
+expect($1).to eq($2)
+endsnippet
+
+snippet eq "eq"
+eq($1)
+endsnippet
+

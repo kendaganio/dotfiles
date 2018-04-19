@@ -1,7 +1,7 @@
-# ~/.tmuxinator/wabi.yml
+# ~/.tmuxinator/wsweb.yml
 
-name: wabi
-root: ~/Code/wabisabi
+name: wsweb
+root: ~/Code/wabisabi-app
 startup_pane: 1
 
 # Optional tmux socket
@@ -35,6 +35,6 @@ windows:
   - srv: 
       layout: even-horizontal
       panes:
-        - rails s
-        - rspec spec/
+        - ls
+        - ls
   - vim: vim

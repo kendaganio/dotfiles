@@ -2,12 +2,13 @@
 
 echo "Let's start this mofo up!"
 
-ln -sv `pwd`/vimrc ~/.vimrc
-ln -sv `pwd`/gvimrc ~/.gvimrc
-ln -sv `pwd`/vim ~/.vim
-ln -sv `pwd`/tmux.conf ~/.tmux.conf
-ln -sv `pwd`/tmuxinator ~/.tmuxinator
-ln -sv `pwd`/gitconfig ~/.gitconfig
-ln -sv `pwd`/config/ranger ~/.config
+ln -sfv `pwd`/gitconfig ~/.gitconfig
+
+ln -sfv `pwd`/gvimrc ~/.gvimrc
+ln -sfv `pwd`/vimrc ~/.vimrc
+ln -sfv `pwd`/vim ~/.vim
+
+ln -sfv `pwd`/tmux.conf ~/.tmux.conf
+ln -sfv `pwd`/tmuxinator ~/.tmuxinator
 
 echo "All done!"

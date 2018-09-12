@@ -52,6 +52,7 @@ set nobackup
 set noswapfile
 set nowb
 set directory=/tmp// " prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename(//)
+set viminfo=""
 
 " Display tabs and trailing spaces visually
 set list listchars=tab:→\ ,trail:·
@@ -123,6 +124,7 @@ let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 let g:UltiSnipsSnippetsDirectorires = ["~/.vim/UltiSnips", "UltiSnips"]
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:indentLine_fileTypeExclude = ['json', 'markdown'] 
+let g:livepreview_previewer = 'mupdf'
 
 " JS Config shit
 let g:jsx_ext_required = 0

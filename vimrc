@@ -44,7 +44,7 @@ set history=256  " Large history buffer
 
 set autoread " Automatically track changes to buffers
 
-set clipboard+=unnamed  " Yanks go on clipboard instead.
+set clipboard=unnamedplus  " Yanks go on clipboard instead.
 set pastetoggle=<F2> "  toggle between paste and normal: for 'safer' pasting from keyboard
 
 " Backup
@@ -124,7 +124,6 @@ let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 let g:UltiSnipsSnippetsDirectorires = ["~/.vim/UltiSnips", "UltiSnips"]
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:indentLine_fileTypeExclude = ['json', 'markdown'] 
-let g:livepreview_previewer = 'mupdf'
 
 " JS Config shit
 let g:jsx_ext_required = 0

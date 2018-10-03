@@ -27,7 +27,7 @@ client.background       #ffffff
 #####################################################################################################
 
 # screen compositor
-exec --no-startup-id compton
+exec --no-startup-id compton -f
 # set background
 exec sh ~/.fehbg
 # load xresources
@@ -36,11 +36,11 @@ exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 exec telegram-desktop
-assign [class="^TelegramDesktop$"] 3: chat
+assign [class="^TelegramDesktop$"] $ws3
 exec mailspring
-assign [class="^Mailspring$"] 4: email
+assign [class="^Mailspring$"] $ws4
 exec firefox
-assign [class="^Firefox$"] 1: web
+assign [class="^Firefox$"] $ws1
 
 #####################################################################################################
 # Key bindings

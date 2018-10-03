@@ -35,6 +35,6 @@ windows:
   - srv: 
       layout: even-horizontal
       panes:
-        - foreman start
+        - foreman start web
         - git s
   - vim: vim

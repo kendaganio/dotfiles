@@ -1,10 +1,9 @@
 ! Base16 OceanicNext
 ! Scheme: https://github.com/voronianski/oceanic-next-color-scheme
-URxvt.font: xft:Fira Code:size=13, \
-            xft:DejaVu Sans Mono:size=13, \
+URxvt.font: xft:Fira Code:pixelsize=16, \
+            xft:Dejavu Sans Mono:pixelsize=16, \
             xft:Noto Color Emoji:minspace=False, \
-            xft:Material Icons:size=13
-URxvt.letterSpace: -1
+            xft:Material Icons:pixelsize=16
 URxvt.scrollBar: false
 URxvt.depth: 32
 URxvt.imLocale: en_US.UTF-8
@@ -34,7 +33,7 @@ Xft.lcdfilter: lcddefault
 #define base0F #ab7967
 
 *foreground:   base05
-*background:   [90]base00
+*background:   [95]base00
 *cursorColor:  base05
 
 *color0:       base00

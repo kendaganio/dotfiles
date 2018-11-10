@@ -6,6 +6,7 @@ Plug 'ddollar/nerdcommenter'
 Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'SirVer/ultisnips'
+Plug 'jiangmiao/auto-pairs'
 
 " tpope section
 Plug 'tpope/vim-vinegar'
@@ -26,6 +27,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'Yggdroot/indentLine'
 
 " Syntax 
+Plug 'w0rp/ale'
 Plug 'mxw/vim-jsx'
 Plug 'posva/vim-vue'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -129,3 +131,13 @@ let g:indentLine_fileTypeExclude = ['json', 'markdown']
 let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc= 1
 
+" ALE
+let g:airline#extensions#ale#enabled = 1
+let g:ale_linters = {
+\  'javascript': ['eslint']
+\}
+let g:ale_fixers = {
+\  'javascript': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'

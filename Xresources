@@ -6,6 +6,7 @@ URxvt.font: xft:Fira Code:pixelsize=16, \
             xft:Noto Emoji:minspace=False, \
             xft:Material Icons:pixelsize=16 \
             xft:Symbola:pixelsize=16, \
+            xft:icomoon:pixelsize=16 \
             xft:Wuncon Siji:pixelsize=16
 URxvt.scrollBar: false
 URxvt.depth: 32

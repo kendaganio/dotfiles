@@ -24,39 +24,21 @@ icon = #4ec2f7
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 34
-fixed-center = false
+height = 35
+fixed-center = true
 
 background = #00000000
 foreground = #ccffffff
 
-border-size = 0
-border-color = #00000000
+font-0 = "SF Mono:size=10:antialias=true;2"
+font-1 = "icomoon:size=12:antialias=true;2"
+font-2 = "Material Icons:pixelsize=12;2"
 
-font-0 = "SF Mono:size=10:antialias=true"
-font-1 = "Material Icons:pixelsize=12;0"
-font-2 = "Symbola:size=12:antialias=true"
-font-3 = "Wuncon Siji:size=12:antialias=true"
-
-module-margin = 1
-modules-left = i3
-modules-center = title
-modules-right = date time-denver
-
-[bar/bottom]
-width = 100%
-height = 30
-bottom = true
-module-margin = 1
-modules-left = filesystem cpu memory eth 
-modules-center = backlight-acpi pulseaudio battery temperature 
-modules-right = wlan
-
-font-0 = "SF Mono:size=10:antialias=true"
-font-1 = "Material Icons:pixelsize=12;0"
-font-2 = "Symbola:size=12:antialias=true"
-font-3 = "Wuncon Siji:size=12:antialias=true"
-
+module-margin = 2
+padding-right = 0
+modules-left = i3 title
+modules-center =
+modules-right = backlight-acpi pulseaudio temperature cpu memory eth wlan battery date time-denver
 
 tray-position = right
 tray-padding = 3
@@ -105,11 +87,11 @@ label-unmounted = %mountpoint% not mounted
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
+format = <label>
 ;format = <label>
-label =  %percentage%%
+label =  %percentage%%
 
-bar-width = 10
+bar-width = 5
 bar-indicator =
 bar-indicator-foreground = #fff
 bar-indicator-font = 2
@@ -128,7 +110,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ""
+format-prefix = " "
 format-prefix-foreground = ${colors.fg}
 format-underline = #f90000
 label = %percentage:2%%
@@ -136,7 +118,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.fg}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -147,16 +129,10 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-;format-connected = <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
 format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.fg}
-
 ramp-signal-0 = 
 ramp-signal-foreground = ${colors.fg}
 
@@ -180,11 +156,11 @@ format-disconnected =
 type = internal/date
 interval = 30
 
-date-alt =
-date = " %a %B, %d"
+date =
+date-alt = " %a %B, %d"
 
 time = %I:%M %p
-time-alt = %H:%M %p
+time-alt = %I:%M %p
 
 format-prefix = 
 format-prefix-foreground = ${colors.fg}
@@ -192,20 +168,19 @@ format-underline = #0a6cf5
 
 label = %date% %time%
 
-
 [module/time-denver]
 type = custom/script
-exec = TZ=America/Denver date +"MT: %I:%M %p"
+exec = TZ=America/Denver date +" %I:%M %p"
 interval = 30
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-label-volume =  %percentage%%
+format-volume = <label-volume>
+label-volume =  %percentage%%
 label-volume-foreground = #ffffff
 
-label-muted = 🔇 muted
+label-muted =  muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -225,34 +200,6 @@ bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.fg}
 
-[module/alsa]
-type = internal/alsa
-
-format-volume = <label-volume> <bar-volume>
-label-volume = 
-label-volume-foreground = ${root.foreground}
-
-format-muted-prefix = " "
-format-muted-foreground = ${colors.fg}
-label-muted = 
-
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator =
-bar-volume-indicator-font = 2
-bar-volume-fill = ─
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.fg}
-
 [module/battery]
 type = internal/battery
 battery = BAT0
@@ -263,23 +210,16 @@ format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = "full "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.fg}
-format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.fg}
-
-animation-charging-0 = 
-animation-charging-1 = 
+animation-charging-0 = 
+animation-charging-1 = 
 animation-charging-foreground = ${colors.fg}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
+animation-discharging-0 = 
 animation-discharging-foreground = ${colors.fg}
 animation-discharging-framerate = 750
 
@@ -295,37 +235,10 @@ format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
+label-warn-foreground = ${colors.fg}
 
-ramp-0 = 
+ramp-0 = 
 ramp-foreground = ${colors.fg}
-
-[module/powermenu]
-type = custom/menu
-expand-right = true
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.fg}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
@@ -333,9 +246,5 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-
-[global/wm]
-margin-top = 5
-margin-bottom = 5
 
 ; vim:ft=dosini

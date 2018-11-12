@@ -97,7 +97,6 @@ colorscheme base16-ocean
 " Key bindings
 let mapleader=','
 inoremap jk <esc>
-nnoremap ; :
 nnoremap // :nohlsearch<cr>
 nnoremap <leader>rs :source $MYVIMRC<cr>
 nnoremap <leader>w :w<enter>

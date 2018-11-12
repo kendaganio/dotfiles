@@ -30,24 +30,24 @@ fixed-center = true
 background = #00000000
 foreground = #ccffffff
 
-font-0 = "SF Mono:size=10:antialias=true;2"
-font-1 = "icomoon:size=12:antialias=true;2"
-font-2 = "Material Icons:pixelsize=12;2"
+font-0 = "SF Mono:size=11:antialias=true;2"
+font-1 = "icomoon:size=13:antialias=true;3"
 
-module-margin = 2
-padding-right = 0
+module-margin = 1
+padding-right = 1
 modules-left = i3 title
 modules-center =
-modules-right = backlight-acpi pulseaudio temperature cpu memory eth wlan battery date time-denver
+;modules-right = cpu memory backlight-acpi pulseaudio eth wlan battery date time-denver
+modules-right = memory wlan battery date time-denver
 
 tray-position = right
-tray-padding = 3
+tray-padding = 5
 tray-transparent = true
 tray-background = #00000000
 
 [module/title]
 type = internal/xwindow
-label = %title%
+label = > %title%
 label-maxlen = 75
 
 [module/i3]
@@ -132,8 +132,10 @@ format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
-format-disconnected =
-ramp-signal-0 = 
+format-disconnected = <label-disconnected>
+label-disconnected =  disconnected
+
+ramp-signal-0 = 
 ramp-signal-foreground = ${colors.fg}
 
 [module/eth]
@@ -156,13 +158,13 @@ format-disconnected =
 type = internal/date
 interval = 30
 
-date =
-date-alt = " %a %B, %d"
+date = " %a %B, %d"
+date-alt =
 
 time = %I:%M %p
 time-alt = %I:%M %p
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.fg}
 format-underline = #0a6cf5
 
@@ -170,7 +172,7 @@ label = %date% %time%
 
 [module/time-denver]
 type = custom/script
-exec = TZ=America/Denver date +" %I:%M %p"
+exec = TZ=America/Denver date +" %I:%M %p"
 interval = 30
 
 [module/pulseaudio]
@@ -211,7 +213,7 @@ format-charging-underline = #ffb52a
 
 format-discharging = <animation-discharging> <label-discharging>
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.fg}
 
 animation-charging-0 = 

@@ -1,7 +1,7 @@
-# ~/.tmuxinator/lp.yml
+# ~/.tmuxinator/site.yml
 
-name: lp
-root: ~/Code/launchpad
+name: site
+root: ~/Code/kendaganio.github.io
 startup_pane: 1
 
 # Optional tmux socket
@@ -29,17 +29,12 @@ startup_pane: 1
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t lp
+# post: tmux -CC attach -t site
 
 windows:
   - srv: 
       layout: even-horizontal
       panes:
-        - rails s webrick
-        - clear
+        - jekyll serve
+        - git l
   - vim: vim
-  - term: 
-      layout: even-horizontal
-      panes:
-        - clear
-        - clear

@@ -1,33 +1,28 @@
 configuration {
-  display-drun:    "❱";
-  display-run:    "❱";
-  show-icons:      true;
+  display-run: "🍑";
+  display-window: "🍑";
 }
 
 * {
   font: "SF Mono 16";
   padding: 5px 5px;
-  background-color: #414141;
+  background-color: #1b2b34;
   color: #fff;
 }
 
 window {
   border-radius: 5px;
-  height: 600px;
-  width: 1000px;
+  height: 500px;
+  width: 900px;
   padding: 30px;
 }
 
-#prompt {
-  color: #81a1c1;
-}
-      
 listview {
-    padding: 40px 10px 0px 10px;
-    spacing: 0.5em;
+  padding: 30px 10px 0px 10px;
+  spacing: 0.5em;
 }
 
-#element selected {
+element selected {
   text-color: #81a1c1;
 }
 

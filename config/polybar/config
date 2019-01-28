@@ -39,7 +39,7 @@ padding-right = 1
 modules-left = i3 title
 modules-center =
 ;modules-right = cpu memory backlight-acpi pulseaudio eth wlan battery date time-denver
-modules-right = memory wlan battery date time-denver
+modules-right = pulseaudio memory wlan battery filesystem date time-denver
 
 tray-position = right
 tray-padding = 5
@@ -61,7 +61,7 @@ label-mode-padding = 2
 
 label-focused = %name%
 label-focused-padding = 2
-label-focused-background = #6600cec9
+label-focused-background = #218c74
 label-focused-foreground = #ffffffff
 
 label-unfocused = %name%
@@ -79,7 +79,6 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-mount-1 = /home
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-} %percentage_used%%
 label-unmounted = %mountpoint% not mounted
@@ -119,22 +118,21 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-suffix = " "
 format-prefix-foreground = ${colors.fg}
-format-underline = #4bffdc
-label = %percentage_used%%
+label = %percentage_used%% 
 
 [module/wlan]
 type = internal/network
 interface = wlp3s0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected> <ramp-signal>
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
 format-disconnected = <label-disconnected>
-label-disconnected =  disconnected
+label-disconnected = disconnected 
 
 ramp-signal-0 = 
 ramp-signal-foreground = ${colors.fg}
@@ -159,13 +157,13 @@ format-disconnected =
 type = internal/date
 interval = 30
 
-date = " %a %B, %d"
-date-alt =
+date =
+date-alt = "%A, %B %d  "
 
 time = %I:%M %p
 time-alt = %I:%M %p
 
-format-prefix = 
+;format-prefix = 
 format-prefix-foreground = ${colors.fg}
 format-underline = #0a6cf5
 
@@ -173,17 +171,17 @@ label = %date% %time%
 
 [module/time-denver]
 type = custom/script
-exec = TZ=America/Denver date +" %I:%M %p"
+exec = TZ=America/Denver date +"%I:%M %p"
 interval = 30
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume>
-label-volume =  %percentage%%
-label-volume-foreground = #ffffff
+label-volume = %percentage%% 
+; label-volume-foreground = #ffffff
 
-label-muted =  muted
+label-muted = muted 
 label-muted-foreground = #666
 
 bar-volume-width = 10
@@ -209,22 +207,19 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging> <animation-charging>
 format-charging-underline = #ffb52a
-
-format-discharging = <animation-discharging> <label-discharging>
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.fg}
-
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-foreground = ${colors.fg}
 animation-charging-framerate = 750
 
+format-discharging = <label-discharging> <animation-discharging>
 animation-discharging-0 = 
 animation-discharging-foreground = ${colors.fg}
 animation-discharging-framerate = 750
+
+format-full-suffix = "  "
 
 [module/temperature]
 type = internal/temperature

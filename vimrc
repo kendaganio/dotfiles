@@ -102,9 +102,10 @@ nnoremap <leader>rs :source $MYVIMRC<cr>
 nnoremap <leader>w :w<enter>
 
 nnoremap <leader>d :NERDTreeToggle<cr>
-nnoremap <leader>a :Ag 
+nnoremap <leader>a :Ag ''<Left>
 
 nnoremap <C-p> :FZF<cr>
+nnoremap <leader>b :Buffers<cr>
 
 nnoremap <leader>gb :Gblame<cr>
 
@@ -132,6 +133,8 @@ let g:javascript_plugin_jsdoc= 1
 
 " ALE
 let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '🙈'
 let g:ale_linters = {
 \  'javascript': ['eslint']
 \}

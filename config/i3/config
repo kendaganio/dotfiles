@@ -5,20 +5,23 @@
 set $mod Mod1
 font pango:SF Mono Regular 10
 
-bindsym $mod+ctrl+shift+4 exec --no-startup-id "flameshot gui -p ~/"
 smart_gaps on
 smart_borders on
 gaps inner 20
 
 new_window normal
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 for_window [class=".*"] title_format " %title "
 for_window [class="Peek"] floating enable
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #a54242 #a54242 #ffffff #a54242   #a54242
-client.focused          #a54242 #a54242 #c5c8c6 #a54242   #a54242
-client.focused          #8abeb7 #8abeb7 #ffffff #8abeb7   #8abeb7
+# client.focused          #8abeb7 #8abeb7 #ffffff #8abeb7   #8abeb7
+# client.focused          #00cec9 #00cec9 #ffffff #00cec9   #00cec9
+
+set $activeBg #218c74
+set $activeFg #ffffff
+
+# class                 border     background  text       indicator  child_border
+client.focused          $activeBg  $activeBg   $activeFg  $activeBg  $activeBg
 client.unfocused        #373b41 #373b41 #c5c8c6 #111111   #373b41   #373b41
 client.background       #ffffff
 
@@ -28,15 +31,17 @@ client.background       #ffffff
 
 exec --no-startup-id compton -f # screen compositor
 exec --no-startup-id feh --bg-scale /home/kd/bg.jpg # set background
+exec_always --no-startup-id blueberry-tray
 exec_always --no-startup-id xrdb -load ~/.Xresources # load xresources
 exec_always --no-startup-id ~/.config/polybar/launch.sh # polybar
-# launch apps
-exec telegram-desktop
-exec mailspring
-exec google-chrome-stable
-exec spotify
 
-assign [class="^Spotify$"] $ws3
+# Launch apps
+exec google-chrome-stable
+exec mailspring
+exec spotify
+exec telegram-desktop
+
+for_window [class="^Spotify$"] move to workspace $ws3
 assign [class="^TelegramDesktop$"] $ws3
 assign [class="^Mailspring$"] $ws4
 assign [class="^Google-chrome$"] $ws1
@@ -46,6 +51,11 @@ assign [class="^Google-chrome$"] $ws1
 #####################################################################################################
 
 floating_modifier $mod
+
+# Screenshot
+bindsym $mod+ctrl+shift+3 exec --no-startup-id "flameshot full -p ~/"
+bindsym $mod+ctrl+shift+4 exec --no-startup-id "flameshot gui -p ~/"
+
 # bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
@@ -72,7 +82,7 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+# bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 

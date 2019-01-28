@@ -1,7 +1,7 @@
-# ~/.tmuxinator/cb.yml
+# ~/.tmuxinator/pui.yml
 
-name: cb
-root: ~/Code/connect-backend
+name: pui
+root: ~/Code/peplink-ui
 startup_pane: 1
 
 # Optional tmux socket
@@ -29,12 +29,12 @@ startup_pane: 1
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t cb
+# post: tmux -CC attach -t peplink-ui
 
 windows:
   - srv: 
       layout: even-horizontal
       panes:
-        - foreman start web
-        - git s
+        - yarn storybook
+        - git l
   - vim: vim

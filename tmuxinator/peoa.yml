@@ -1,7 +1,7 @@
-# ~/.tmuxinator/wsweb.yml
+# ~/.tmuxinator/peoa.yml
 
-name: wsweb
-root: ~/Code/wabisabi-app
+name: peoa
+root: ~/Code/peplink-ecommerce-order-app
 startup_pane: 1
 
 # Optional tmux socket
@@ -29,12 +29,12 @@ startup_pane: 1
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t corgi
+# post: tmux -CC attach -t peplink-ui
 
 windows:
   - srv: 
       layout: even-horizontal
       panes:
-        - ls
-        - ls
+        - yarn start
+        - git l
   - vim: vim

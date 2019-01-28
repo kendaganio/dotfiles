@@ -39,7 +39,7 @@ padding-right = 1
 modules-left = i3 title
 modules-center =
 ;modules-right = cpu memory backlight-acpi pulseaudio eth wlan battery date time-denver
-modules-right = pulseaudio memory wlan battery filesystem date time-denver
+modules-right = pulseaudio memory wlan battery filesystem date
 
 tray-position = right
 tray-padding = 5
@@ -168,11 +168,6 @@ format-prefix-foreground = ${colors.fg}
 format-underline = #0a6cf5
 
 label = %date% %time%
-
-[module/time-denver]
-type = custom/script
-exec = TZ=America/Denver date +"%I:%M %p"
-interval = 30
 
 [module/pulseaudio]
 type = internal/pulseaudio

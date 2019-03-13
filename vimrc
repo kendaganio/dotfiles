@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 
 " Basics
 Plug 'scrooloose/nerdtree'
-Plug 'ddollar/nerdcommenter'
 Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'SirVer/ultisnips'
@@ -13,7 +12,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-dispatch'
 
 " fzf is <3 
@@ -28,9 +27,7 @@ Plug 'Yggdroot/indentLine'
 
 " Syntax 
 Plug 'w0rp/ale'
-Plug 'mxw/vim-jsx'
-Plug 'posva/vim-vue'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
 
 " Other stuff
@@ -41,10 +38,7 @@ call plug#end()
 
 set nocompatible " Disable vi compatibility
 set encoding=utf8 " Set encoding
-
 set history=256  " Large history buffer
-
-set autoread " Automatically track changes to buffers
 
 set clipboard=unnamedplus  " Yanks go on clipboard instead.
 set pastetoggle=<F2> "  toggle between paste and normal: for 'safer' pasting from keyboard
@@ -60,6 +54,7 @@ set viminfo=""
 set list listchars=tab:→\ ,trail:·
 
 " Buffers
+set autoread " Automatically track changes to buffers
 set hidden " The current buffer can be put to the background without writing to disk
 set laststatus=2
 
@@ -71,6 +66,9 @@ set incsearch   " searches before pressing enter
 
 set nowrap
 set textwidth=0		" Don't wrap lines by default
+set wildignore+=node_modules
+set wildignore+=log,logs
+set wildignore+=vendor
 set wildmode=longest,list " At command line, complete longest common string, then list alternatives.
 
 set backspace=indent,eol,start	" more powerful backspacing
@@ -133,8 +131,6 @@ let g:javascript_plugin_jsdoc= 1
 
 " ALE
 let g:airline#extensions#ale#enabled = 1
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '🙈'
 let g:ale_linters = {
 \  'javascript': ['eslint']
 \}

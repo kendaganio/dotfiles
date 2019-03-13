@@ -3,7 +3,7 @@
 #####################################################################################################
 
 set $mod Mod1
-font pango:SF Mono Regular 10
+font pango:SF Mono Regular 0
 
 smart_gaps on
 smart_borders on
@@ -31,6 +31,7 @@ client.background       #ffffff
 
 exec --no-startup-id compton -f # screen compositor
 exec --no-startup-id feh --bg-scale /home/kd/bg.jpg # set background
+exec --no-startup-id udiskie --tray
 exec_always --no-startup-id blueberry-tray
 exec_always --no-startup-id xrdb -load ~/.Xresources # load xresources
 exec_always --no-startup-id ~/.config/polybar/launch.sh # polybar

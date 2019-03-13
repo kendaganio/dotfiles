@@ -14,4 +14,4 @@
   pl = pull origin master
   ps = push origin master
 [core]
-  editor = vim
+  editor = nvim

@@ -1,7 +1,7 @@
-# ~/.tmuxinator/pui.yml
+# ~/.tmuxinator/wsapi.yml
 
-name: pui
-root: ~/Code/peplink-ui
+name: wsapi
+root: ~/Code/wabisabi
 startup_pane: 1
 
 # Optional tmux socket
@@ -29,12 +29,12 @@ startup_pane: 1
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t peplink-ui
+# post: tmux -CC attach -t wsapi
 
 windows:
   - srv: 
       layout: even-horizontal
       panes:
-        - yarn storybook
-        - clear
-  - vim: vim
+        - rails s
+        - clear; git s
+  - vim: nvim

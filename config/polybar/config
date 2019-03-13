@@ -157,7 +157,6 @@ format-disconnected =
 type = internal/date
 interval = 30
 
-date =
 date-alt = "%A, %B %d  "
 
 time = %I:%M %p

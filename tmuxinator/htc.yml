@@ -1,7 +1,7 @@
-# ~/.tmuxinator/pui.yml
+# ~/.tmuxinator/dotfiles.yml
 
-name: pui
-root: ~/Code/peplink-ui
+name: htc
+root: ~/Code/control
 startup_pane: 1
 
 # Optional tmux socket
@@ -29,12 +29,12 @@ startup_pane: 1
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t peplink-ui
+# post: tmux -CC attach -t dotfiles
 
 windows:
   - srv: 
       layout: even-horizontal
       panes:
-        - yarn storybook
-        - clear
-  - vim: vim
+        - ls -la
+        - git l
+  - nvim: nvim

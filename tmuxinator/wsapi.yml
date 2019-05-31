@@ -37,4 +37,4 @@ windows:
       panes:
         - rails s
         - clear; git s
-  - vim: nvim
+  - nvim: nvim

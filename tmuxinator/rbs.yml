@@ -37,4 +37,4 @@ windows:
       panes:
         - git s
         - cd www; yarn develop
-  - vim: vim
+  - nvim: vim

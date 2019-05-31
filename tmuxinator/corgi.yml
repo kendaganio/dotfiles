@@ -37,4 +37,4 @@ windows:
       panes:
         - yarn docs-start
         - cd docs; jekyll serve
-  - vim: vim
+  - nvim: nvim

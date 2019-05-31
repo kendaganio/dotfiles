@@ -36,4 +36,4 @@ windows:
       layout: even-horizontal
       panes:
         - git l
-  - vim: vim
+  - nvim: vim

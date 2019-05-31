@@ -36,5 +36,5 @@ windows:
       layout: even-horizontal
       panes:
         - yarn start
-        - clear; gits
-  - vim: nvim
+        - clear; git s
+  - nvim: nvim

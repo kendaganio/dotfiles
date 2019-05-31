@@ -34,6 +34,9 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'shime/vim-livedown'
 Plug 'easymotion/vim-easymotion'
 
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
+
 call plug#end()
 
 set nocompatible " Disable vi compatibility
@@ -70,6 +73,7 @@ set wildignore+=node_modules
 set wildignore+=log,logs
 set wildignore+=vendor
 set wildmode=longest,list " At command line, complete longest common string, then list alternatives.
+set cc=80
 
 set backspace=indent,eol,start	" more powerful backspacing
 
@@ -89,8 +93,9 @@ autocmd BufWritePre *.rb,*.js,*.jsx,*.slim,*.css,*.scss :%s/\s\+$//e " Remove tr
 
 " UI colors
 let &t_Co = 256 " Set 256 Colors
+let base16colorspace=256
 set background=dark
-colorscheme base16-ocean
+colorscheme base16-oceanicnext
 
 " Key bindings
 let mapleader=','
@@ -122,6 +127,7 @@ let g:airline_right_sep=''
 let g:indentLine_char = '▏'
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 let g:UltiSnipsSnippetsDirectorires = ["~/.vim/UltiSnips", "UltiSnips"]
+let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:indentLine_fileTypeExclude = ['json', 'markdown'] 
 
@@ -132,7 +138,8 @@ let g:javascript_plugin_jsdoc= 1
 " ALE
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
-\  'javascript': ['eslint']
+\  'javascript': ['eslint'],
+\  'ruby': ['rubocop'],
 \}
 let g:ale_fixers = {
 \  'javascript': ['prettier'],

@@ -15,7 +15,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-dispatch'
 
-" fzf is <3 
+" fzf is <3
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -25,7 +25,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
 Plug 'Yggdroot/indentLine'
 
-" Syntax 
+" Syntax
 Plug 'w0rp/ale'
 Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
@@ -86,8 +86,9 @@ set smarttab " Smarter tab levels
 " Syntax highlighting
 syntax on
 filetype plugin indent on
+set cursorline
 
-set fillchars+=vert:\ 
+set fillchars+=vert:\
 
 autocmd BufWritePre *.rb,*.js,*.jsx,*.slim,*.css,*.scss :%s/\s\+$//e " Remove trailing whitespaces
 
@@ -103,13 +104,10 @@ inoremap jk <esc>
 nnoremap // :nohlsearch<cr>
 nnoremap <leader>rs :source $MYVIMRC<cr>
 nnoremap <leader>w :w<enter>
-
 nnoremap <leader>d :NERDTreeToggle<cr>
 nnoremap <leader>a :Ag ''<Left>
-
 nnoremap <C-p> :FZF<cr>
 nnoremap <leader>b :Buffers<cr>
-
 nnoremap <leader>gb :Gblame<cr>
 
 " Buffer Controls
@@ -119,17 +117,20 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap vv <C-w>v
 nnoremap ss <C-w>s
+nnoremap <C-n> :bnext<cr>
 
 " Custom config stuff
 let g:airline_theme = 'luna'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:indentLine_char = '▏'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = "\ue0b8 "
+let g:airline#extensions#tabline#left_alt_sep = " "
+let g:airline_left_sep="\ue0b8"
+let g:airline_right_sep="\ue0ba"
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
 let g:UltiSnipsSnippetsDirectorires = ["~/.vim/UltiSnips", "UltiSnips"]
 let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:indentLine_fileTypeExclude = ['json', 'markdown'] 
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 " JS Config shit
 let g:jsx_ext_required = 0
@@ -145,4 +146,3 @@ let g:ale_fixers = {
 \  'javascript': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'

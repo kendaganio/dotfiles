@@ -6,6 +6,7 @@ Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'SirVer/ultisnips'
 Plug 'jiangmiao/auto-pairs'
+Plug 'easymotion/vim-easymotion'
 
 " tpope section
 Plug 'tpope/vim-vinegar'
@@ -19,23 +20,23 @@ Plug 'tpope/vim-dispatch'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
+" Syntax
+Plug 'w0rp/ale'
+Plug 'sheerun/vim-polyglot'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
+
 " Pretty Stuff
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chriskempson/base16-vim'
 Plug 'Yggdroot/indentLine'
-
-" Syntax
-Plug 'w0rp/ale'
-Plug 'sheerun/vim-polyglot'
-Plug 'editorconfig/editorconfig-vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Other stuff
 Plug 'shime/vim-livedown'
-Plug 'easymotion/vim-easymotion'
-
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
 
@@ -104,6 +105,7 @@ inoremap jk <esc>
 nnoremap // :nohlsearch<cr>
 nnoremap <leader>rs :source $MYVIMRC<cr>
 nnoremap <leader>w :w<enter>
+nnoremap <leader>x :bd<enter>
 nnoremap <leader>d :NERDTreeToggle<cr>
 nnoremap <leader>a :Ag ''<Left>
 nnoremap <C-p> :FZF<cr>
@@ -122,7 +124,8 @@ nnoremap <C-n> :bnext<cr>
 " Custom config stuff
 let g:airline_theme = 'luna'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = "\ue0b8 "
+let g:airline#extensions#tabline#left_sep = "\ue0bc "
+let g:airline#extensions#tabline#right_sep = "\ue0be"
 let g:airline#extensions#tabline#left_alt_sep = " "
 let g:airline_left_sep="\ue0b8"
 let g:airline_right_sep="\ue0ba"
@@ -137,12 +140,15 @@ let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc= 1
 
 " ALE
+" \  'ruby': ['rubocop'],
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'ruby': ['rubocop'],
 \}
+" \  'ruby': ['standardrb'],
 let g:ale_fixers = {
 \  'javascript': ['prettier'],
 \}
 let g:ale_fix_on_save = 1
+let g:ale_set_highlights = 0

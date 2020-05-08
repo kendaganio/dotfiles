@@ -1,7 +1,7 @@
-# ~/.tmuxinator/htc.yml
+# ~/.tmuxinator/hui.yml
 
-name: htc
-root: ~/Code/control
+name: hui
+root: ~/Code/hometime-ui
 startup_pane: 1
 
 # Optional tmux socket

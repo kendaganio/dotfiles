@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 
 " Basics
 Plug 'preservim/nerdtree'
-Plug 'rking/ag.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 
@@ -23,6 +22,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'alvan/vim-closetag'
 
 " Pretty Stuff
 Plug 'vim-airline/vim-airline'
@@ -44,7 +44,9 @@ set nobackup
 set noswapfile
 set nowb
 set directory=/tmp// " prepend(^=) $HOME/.tmp/ to default path; use full path as backup filename(//)
-set viminfo='100,n$HOME/.vim/files/info/viminfo
+if !has('nvim')
+  set viminfo='100,n$HOME/.vim/files/info/viminfo
+end
 
 " Buffers
 set autoread " Automatically track changes to buffers
@@ -92,7 +94,7 @@ nnoremap <leader><leader>x :bufdo bd<enter>
 nnoremap <leader>q :q!<enter>
 nnoremap <leader><leader>q :qa!<enter>
 nnoremap <leader>d :NERDTreeToggle<cr>
-nnoremap <leader>a :Ag ''<Left>
+nnoremap <leader>a :Rg<space>
 nnoremap <C-p> :FZF<cr>
 nnoremap <leader>b :Buffers<cr>
 nnoremap <leader>gb :Gblame<cr>
@@ -133,3 +135,6 @@ let g:coc_snippet_next = '<tab>'
 " JS Config shit
 let g:jsx_ext_required = 0
 let g:javascript_plugin_jsdoc= 1
+
+let g:closetag_filenames = '*.html,*.js,*.jsx,*.ts,*.tsx'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx.*.js,*.ts,*.tsx'

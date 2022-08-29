@@ -39,7 +39,11 @@ require("packer").startup(function(use)
   use("neovim/nvim-lspconfig") -- Configure LSP
   use("williamboman/mason.nvim") -- Install LSP servers (:Mason)
   use("williamboman/mason-lspconfig.nvim")
-  use({ "hrsh7th/nvim-cmp", requires = { "hrsh7th/cmp-nvim-lsp" } })
+  use({ "hrsh7th/nvim-cmp", requires = {
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-buffer",
+    "onsails/lspkind.nvim"
+  } })
 
   -- Pretty Stuff
   use({ "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons" }) -- Status line
@@ -87,6 +91,9 @@ vim.opt.list = true
 vim.opt.listchars:append "eol:↴"
 
 vim.cmd([[color tokyonight]])
+vim.opt.fillchars = "fold: "
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- LSP installer
 require("mason").setup()
@@ -120,7 +127,7 @@ require("nvim-treesitter.configs").setup({
     "javascript",
     "typescript",
     "tsx",
-    -- "markdown",
+    "markdown",
     -- "php",
     "python",
     "ruby",
@@ -129,6 +136,7 @@ require("nvim-treesitter.configs").setup({
     -- ...for more, see: https://github.com/nvim-treesitter/nvim-treesitter#supported-languages
   },
   highlight = { enable = true },
+  indent = { enable = true },
   autotag = { enable = true }
 })
 
@@ -220,7 +228,14 @@ require("which-key").register({
 
 -- Completion
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 require("cmp").setup({
+  formatting = {
+    format = lspkind.cmp_format({
+      mode = "symbol_text",
+      maxwidth = 50
+    })
+  },
   sources = cmp.config.sources({
     { name = "nvim_lsp" },
     { name = "nvim_lua" },

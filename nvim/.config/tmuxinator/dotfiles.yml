@@ -1,7 +1,7 @@
-# ~/.tmuxinator/wsapi.yml
+# ~/.tmuxinator/dotfiles.yml
 
-name: wsapi
-root: ~/Code/wabisabi
+name: dots
+root: ~/dotfiles
 startup_pane: 1
 
 # Optional tmux socket
@@ -29,12 +29,11 @@ startup_pane: 1
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t wsapi
+# post: tmux -CC attach -t dotfiles
 
 windows:
   - srv: 
       layout: even-horizontal
       panes:
-        - rails s
-        - clear; git s
-  - nvim: nvim
+        - git l
+  - nvim: vim

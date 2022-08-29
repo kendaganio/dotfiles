@@ -1,7 +1,7 @@
-# ~/.tmuxinator/dotfiles.yml
+# ~/.tmuxinator/zapp.yml
 
-name: dotfiles
-root: ~/Code/dotfiles
+name: zapp
+root: ~/Code/Super-M3
 startup_pane: 1
 
 # Optional tmux socket
@@ -29,11 +29,12 @@ startup_pane: 1
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t dotfiles
+# post: tmux -CC attach -t wsapi
 
 windows:
   - srv: 
       layout: even-horizontal
       panes:
-        - git l
-  - nvim: vim
+        - docker compose ps
+        - clear; git s
+  - nvim: nvim

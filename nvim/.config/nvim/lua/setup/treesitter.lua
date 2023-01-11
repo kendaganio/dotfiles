@@ -4,6 +4,7 @@ local function setup()
 
   treesitter.setup({
     ensure_installed = {
+      "dart",
       "html",
       "json",
       "lua",

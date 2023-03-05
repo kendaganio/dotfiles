@@ -17,16 +17,14 @@ local function setup()
   wk.register({
     ["<c-p>"] = { "<cmd>Telescope fd<cr>", "Open files" },
     ["<c-n>"] = { "<cmd>bnext<cr>", "Next buffer" },
-
     ["-"] = {
       function()
         local previous_buf = vim.api.nvim_get_current_buf()
         require("nvim-tree").open_replacing_current_buffer()
-        require("nvim-tree").find_file(false, previous_buf)
+        require("nvim-tree.api").tree.find_file(previous_buf)
       end,
       "NvimTree in place",
     },
-
     -- single key leader maps
     ["<leader>d"] = { "<cmd>NvimTreeToggle<cr>", "Toggle nvim-tree..." },
     ["<leader>w"] = { "<cmd>w<cr>", "Save file..." },
@@ -41,26 +39,21 @@ local function setup()
     ["<leader><leader>b"] = { "<cmd>HopWordBC<cr>", "Easymotion word-wise..." },
     ["gw"] = { "<cmd>HopWordAC<cr>", "Easymotion word-wise..." },
     ["gl"] = { "<cmd>HopLine<cr>", "Easymotion word-wise..." },
-
     -- buffer controls
     ["n"] = { "nzz", "move to the next but center" },
     ["N"] = { "Nzz", "move to the prev but center" },
     ["vv"] = { "<C-w>v", "Split vertically..." },
     ["//"] = { "<cmd>:nohlsearch<cr>", "Remove search highlight..." },
-
     ["<leader>s"] = { name = "Settings..." },
     ["<leader>sc"] = { "<cmd>Telescope colorscheme<cr>", "Change colorscheme" },
     ["<leader>si"] = { "<cmd>e $MYVIMRC<cr>", "Edit init.lua" },
     ["<leader>sr"] = { "<cmd>luafile $MYVIMRC<cr>", "Reload settings" },
-
     ["<leader>p"] = { name = "Pick..." },
     ["<leader>pf"] = { "<cmd>Telescope fd<cr>", "Open files..." },
-
     ["<leader>c"] = { name = "Code..." },
     ["<leader>cd"] = { "<cmd>Telescope diagnostics<cr>", "Show errors..." },
     ["<leader>ca"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code actions..." },
     ["<leader>cr"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename symbol..." },
-
     ["gD"] = { "<cmd>lua vim.lsp.buf.declaration()<cr>", "Declaration (lsp)..." },
     ["gd"] = { "<cmd>Telescope lsp_definitions<cr>", "Definitions (lsp)..." },
     ["gh"] = { "<cmd>lua vim.lsp.buf.hover()<cr>", "Show hover (lsp)" },

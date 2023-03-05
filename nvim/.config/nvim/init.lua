@@ -15,30 +15,35 @@ require("packer").startup(function(use)
   use({ "wbthomason/packer.nvim" })
 
   -- Basics
-  use({ "lewis6991/impatient.nvim" }) -- Improve startup time by optimising Lua cache
+  use({ "lewis6991/impatient.nvim" })                                            -- Improve startup time by optimising Lua cache
   use({ "tpope/vim-fugitive" })
   use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" }) -- Nvim Tree
-  use({ "alexghergh/nvim-tmux-navigation", config = function()
-    require 'nvim-tmux-navigation'.setup {
-      keybindings = {
-        left = "<C-h>",
-        down = "<C-j>",
-        up = "<C-k>",
-        right = "<C-l>",
-        last_active = "<C-\\>",
-        next = "<C-Space>",
+  use({
+    "alexghergh/nvim-tmux-navigation",
+    config = function()
+      require 'nvim-tmux-navigation'.setup {
+        keybindings = {
+          left = "<C-h>",
+          down = "<C-j>",
+          up = "<C-k>",
+          right = "<C-l>",
+          last_active = "<C-\\>",
+          next = "<C-Space>",
+        }
       }
-    }
-  end })
+    end
+  })
   use({ "phaazon/hop.nvim", branch = 'v2' })
-  use({ "nvim-telescope/telescope.nvim",
+  use({
+    "nvim-telescope/telescope.nvim",
     requires = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
     }
   })
-  use({ "nvim-treesitter/nvim-treesitter",
+  use({
+    "nvim-treesitter/nvim-treesitter",
     requires = {
       "RRethy/nvim-treesitter-endwise",
       "p00f/nvim-ts-rainbow",
@@ -51,22 +56,27 @@ require("packer").startup(function(use)
   use({ "folke/which-key.nvim", commit = "25e0e7f323c43ebe4d0b8df61b4996dba2f89222" })
 
   -- LSP
-  use({ "neovim/nvim-lspconfig", requires = {
-    "b0o/schemastore.nvim"
-  } })
+  use({
+    "neovim/nvim-lspconfig",
+    requires = {
+      "b0o/schemastore.nvim"
+    }
+  })
   use({ "williamboman/mason.nvim" })
   use({ "williamboman/mason-lspconfig.nvim" })
-  use({ "hrsh7th/nvim-cmp", requires = {
-    "hrsh7th/cmp-nvim-lsp",
-    "hrsh7th/cmp-buffer",
-    "hrsh7th/cmp-path",
-    "hrsh7th/cmp-cmdline",
-    "onsails/lspkind.nvim",
-    "L3MON4D3/LuaSnip",
-    "saadparwaiz1/cmp_luasnip",
-    "rafamadriz/friendly-snippets",
-    "honza/vim-snippets"
-  } })
+  use({
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "onsails/lspkind.nvim",
+      "L3MON4D3/LuaSnip",
+      "saadparwaiz1/cmp_luasnip",
+      "honza/vim-snippets"
+    }
+  })
   use({ "jose-elias-alvarez/null-ls.nvim" })
 
   -- Pretty Stuff
@@ -90,13 +100,13 @@ require("impatient") -- Optimise lua cache
 vim.g.mapleader = "," -- leader key
 vim.o.clipboard = "unnamedplus"
 vim.o.autoread = true
-vim.o.mouse = "a" -- mouse support
-vim.o.number = true -- line numbers
-vim.o.swapfile = false -- no swap file
+vim.o.mouse = "a"          -- mouse support
+vim.o.number = true        -- line numbers
+vim.o.swapfile = false     -- no swap file
 vim.o.termguicolors = true -- full color in terminal
 vim.o.timeoutlen = 200
-vim.o.undofile = false -- no undo file
-vim.o.wrap = false -- no word wrap
+vim.o.undofile = false     -- no undo file
+vim.o.wrap = false         -- no word wrap
 
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -123,12 +133,12 @@ vim.cmd("autocmd BufNewFile,BufRead *.jbuilder set ft=ruby")
 require("mason").setup()
 require("mason-lspconfig").setup({
   ensure_installed = {
-    "sumneko_lua",
+    "lua_ls",
     "html",
     "jsonls",
     "tsserver",
-    "solargraph",
-    "gopls",
+    -- "solargraph",
+    -- "gopls",
     "rust_analyzer"
   }
 })

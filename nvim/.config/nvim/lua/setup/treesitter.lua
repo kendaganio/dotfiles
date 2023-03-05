@@ -3,28 +3,29 @@ local function setup()
   if not loaded then return end
 
   treesitter.setup({
-    ensure_installed = {
-      "dart",
-      "html",
-      "json",
-      "lua",
-      "vim",
-      "css",
-      "go",
-      "javascript",
-      "typescript",
-      "tsx",
-      "markdown",
-      "python",
-      "ruby",
-      "rust",
-      "typescript",
-    },
-    highlight = { enable = true },
-    indent = { enable = true },
-    autotag = { enable = true },
-    endwise = { enable = true },
-    rainbow = { enable = true, extended_mode = true }
+      ensure_installed = {
+          "dart",
+          "html",
+          "json",
+          "lua",
+          "vim",
+          "css",
+          "go",
+          "javascript",
+          "typescript",
+          "tsx",
+          "markdown",
+          "python",
+          "ruby",
+          "rust",
+          "typescript",
+          "fish",
+      },
+      highlight = { enable = true },
+      indent = { enable = true },
+      autotag = { enable = true },
+      endwise = { enable = true },
+      rainbow = { enable = true, extended_mode = true }
   })
 end
 

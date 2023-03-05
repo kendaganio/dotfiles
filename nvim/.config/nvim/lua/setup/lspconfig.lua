@@ -22,7 +22,7 @@ local function setup()
   local default_capabilities = vim.lsp.protocol.make_client_capabilities()
   local capabilities = cmp_capabilities.default_capabilities(default_capabilities)
 
-  lspconfig.sumneko_lua.setup({
+  lspconfig.lua_ls.setup({
     on_attach = format_on_save,
     settings = {
       Lua = {
@@ -46,10 +46,12 @@ local function setup()
       },
     },
   }) -- json
+  lspconfig.eslint.setup({})
 
   null_ls.setup({
     sources = {
       null_ls.builtins.formatting.prettierd,
+      null_ls.builtins.formatting.eslint_d,
       null_ls.builtins.formatting.rustfmt,
       null_ls.builtins.formatting.gofmt,
     },

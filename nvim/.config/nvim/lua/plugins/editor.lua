@@ -1,60 +1,48 @@
 return {
-  { "lewis6991/impatient.nvim" },
-  { "tpope/vim-fugitive",           event = "BufEnter" },
-  { "windwp/nvim-spectre",          lazy = true },
-  { "kyazdani42/nvim-web-devicons", lazy = true },
+  { "tpope/vim-fugitive",   event = "VeryLazy" },
+  { "famiu/bufdelete.nvim", event = "VeryLazy" },
+  {
+    "nvim-pack/nvim-spectre",
+    event = "VeryLazy",
+    keys = {
+      { "<leader>cs", "<cmd> lua require('spectre').open()<cr>", desc = "Open spectre" },
+    },
+  },
+  {
+    "numToStr/Comment.nvim",
+    event = "VeryLazy",
+    opts = {},
+  },
+  -- {
+  -- 	"lewis6991/gitsigns.nvim",
+  -- 	event = "VeryLazy",
+  -- 	opts = {},
+  -- },
   {
     "phaazon/hop.nvim",
     event = "VeryLazy",
     branch = "v2",
-    config = function()
-      require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-    end,
-  },
-  {
-    "nvim-tree/nvim-tree.lua",
-    event = "VeryLazy",
-    config = function()
-      require("nvim-tree").setup({
-        view = {
-          mappings = {
-            list = {
-              { key = "<cr>", action = "edit_in_place" },
-            },
-          },
-        },
-        actions = {
-          change_dir = {
-            enable = false,
-          },
-        },
-        renderer = {
-          indent_markers = {
-            enable = true,
-          },
-        },
-      })
-
-      local winopts = require("nvim-tree.view").View.winopts
-      winopts.winfixwidth = false
-      winopts.winfixheight = false
-    end,
+    keys = {
+      { "gw",                "<cmd>HopWordAC<cr>", desc = "Hop by word forward" },
+      { "<leader><leader>w", "<cmd>HopWordAC<cr>", desc = "Hop by word forward" },
+      { "<leader><leader>b", "<cmd>HopWordBC<cr>", desc = "Hop by word back" },
+      { "<leader><leader>l", "<cmd>HopLine<cr>",   desc = "Hop by line" },
+    },
+    opts = { keys = "etovxqpdygfblzhckisuran" },
   },
   {
     "alexghergh/nvim-tmux-navigation",
     event = "VimEnter",
-    config = function()
-      require("nvim-tmux-navigation").setup({
-        keybindings = {
-          left = "<C-h>",
-          down = "<C-j>",
-          up = "<C-k>",
-          right = "<C-l>",
-          last_active = "<C-\\>",
-          next = "<C-Space>",
-        },
-      })
-    end,
+    opts = {
+      keybindings = {
+        left = "<C-h>",
+        down = "<C-j>",
+        up = "<C-k>",
+        right = "<C-l>",
+        last_active = "<C-\\>",
+        next = "<C-Space>",
+      },
+    },
   },
   {
     "nvim-telescope/telescope.nvim",
@@ -89,7 +77,7 @@ return {
     opts = {
       plugins = { spelling = true },
     },
-    config = function(_, opts)
+    config = function()
       require("setup.which_key").setup()
     end,
   },

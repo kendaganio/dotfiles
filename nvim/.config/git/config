@@ -1,8 +1,17 @@
+[core]
+  pager = delta
+  editor = nvim
+
+[init]
+	defaultBranch = main
+
 [user]
   name = Ken-Lauren Daganio
   email = akosiken@gmail.com
+
 [color]
   ui = auto
+
 [alias]
   s = status -sb 
   br = branch
@@ -13,17 +22,29 @@
   c = commit
   pl = pull origin master
   ps = push origin master
-[core]
-  editor = nvim
+
 [merge]
-  tool = vimdiff
+    conflictstyle = diff3
+
 [mergetool]
   prompt = true
+
 [mergetool "vimdiff"]
   cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
 [difftool]
   prompt = false
+
 [diff]
+  colorMoved = default
   tool = vimdiff
-[init]
-	defaultBranch = main
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+    line-numbers = true
+    side-by-side = true
+    dark = true

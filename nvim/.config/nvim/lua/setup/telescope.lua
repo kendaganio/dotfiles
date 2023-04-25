@@ -4,13 +4,6 @@ local function setup()
 		return
 	end
 
-	-- defaults = require("telescope.themes").get_dropdown({
-	-- 	borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
-	-- 	layout_config = {
-	-- 		width = 0.6,
-	-- 	},
-	-- }),
-
 	telescope.setup({
 		defaults = {
 			vimgrep_arguments = {

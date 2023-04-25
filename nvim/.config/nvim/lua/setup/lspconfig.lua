@@ -38,6 +38,13 @@ local function setup()
 						indent_size = "10",
 					},
 				},
+				workspace = {
+					-- Make the server aware of Neovim runtime files
+					library = {
+						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+						[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+					},
+				},
 			},
 		},
 	}) -- lua
@@ -63,6 +70,7 @@ local function setup()
 			null_ls.builtins.formatting.rustfmt,
 			null_ls.builtins.formatting.gofmt,
 			null_ls.builtins.formatting.stylua,
+			null_ls.builtins.formatting.standardrb,
 		},
 		on_attach = function(client, bufnr)
 			format_on_save(client, bufnr)

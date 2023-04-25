@@ -17,11 +17,18 @@ return {
 					"html",
 					"jsonls",
 					"tsserver",
+					"eslint",
 					"rust_analyzer",
+					"gopls",
 				},
 			})
 			require("setup.lspconfig").setup()
 		end,
+	},
+	{
+		"folke/trouble.nvim",
+		event = "VeryLazy",
+		opts = {},
 	},
 	-- cmp and friends
 	{
@@ -32,10 +39,10 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
-			"onsails/lspkind.nvim",
-			"L3MON4D3/LuaSnip",
 			"saadparwaiz1/cmp_luasnip",
-			"honza/vim-snippets",
+			"L3MON4D3/LuaSnip",
+			"onsails/lspkind.nvim",
+			"rafamadriz/friendly-snippets",
 		},
 		config = function()
 			require("setup.cmp").setup()

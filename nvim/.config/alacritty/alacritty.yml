@@ -1,0 +1,28 @@
+window:
+  decorations: None
+
+font:
+  normal:
+    family: JetBrainsMonoNL Nerd Font Mono
+    style: Regular
+
+  bold:
+    family: JetBrainsMonoNL Nerd Font Mono
+    style: Bold
+
+  italic:
+    family: JetBrainsMonoNL Nerd Font Mono
+    style: Italic
+
+  size: 16
+
+  offset:
+    x: 0
+    y: 0
+
+  # Glyph offset determines the locations of the glyphs within their cells with
+  # the default being at the bottom. Increase the x offset to move the glyph to
+  # the right, increase the y offset to move the glyph upward.
+  glyph_offset:
+    x: 0
+    y: 0

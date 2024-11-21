@@ -24,7 +24,7 @@
   ps = push origin master
 
 [merge]
-    conflictstyle = diff3
+    conflictstyle = zdiff3
 
 [mergetool]
   prompt = true

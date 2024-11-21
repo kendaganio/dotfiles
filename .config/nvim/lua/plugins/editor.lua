@@ -13,17 +13,12 @@ return {
 		event = "VeryLazy",
 		opts = {},
 	},
-	-- {
-	-- 	"lewis6991/gitsigns.nvim",
-	-- 	event = "VeryLazy",
-	-- 	opts = {},
-	-- },
 	{
 		"phaazon/hop.nvim",
 		event = "BufEnter",
 		branch = "v2",
 		keys = {
-			{ "gw", "<cmd>HopWordAC<cr>", desc = "Hop by word forward" },
+			{ "gw", "<cmd>HopWord<cr>", desc = "Hop by word" },
 			{ "<leader><leader>w", "<cmd>HopWordAC<cr>", desc = "Hop by word forward" },
 			{ "<leader><leader>b", "<cmd>HopWordBC<cr>", desc = "Hop by word back" },
 			{ "<leader><leader>l", "<cmd>HopLine<cr>", desc = "Hop by line" },
@@ -68,6 +63,7 @@ return {
 		},
 		config = function()
 			require("nvim-autopairs").setup()
+			require("nvim-ts-autotag").setup()
 			require("setup.treesitter").setup()
 		end,
 	},
